@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<!-- <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?> -->
+
+<AnchorPane id="AnchorPane" fx:id="parentPane" prefHeight="670.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="modules.SubjectMappingController">
+   <children>
+      <AnchorPane layoutX="41.0" layoutY="33.0" prefHeight="617.0" prefWidth="343.0" style="-fx-background-color: #ffffff;" styleClass="card-white">
+         <children>
+            <Pane layoutY="-14.0" prefHeight="38.0" prefWidth="346.0" style="-fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5); -fx-background-radius: 4; -fx-background-color: rgb(20, 95, 183,0.6);">
+               <children>
+                  <Label layoutX="86.0" layoutY="4.0" prefHeight="28.0" prefWidth="129.0" text="SUBJECT MAPPING" textFill="WHITE">
+                     <font>
+                        <Font name="Roboto Medium" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <GridPane layoutX="20.0" layoutY="42.0" prefHeight="553.0" prefWidth="278.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="87.0" minHeight="10.0" prefHeight="87.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="130.0" minHeight="10.0" prefHeight="58.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="111.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="160.0" minHeight="10.0" prefHeight="63.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="160.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="133.0" minHeight="10.0" prefHeight="76.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="109.0" minHeight="10.0" prefHeight="95.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="112.0" minHeight="10.0" prefHeight="76.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="51.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <JFXTextField fx:id="txtcid" labelFloat="true" maxWidth="279.0" minWidth="228.0" prefHeight="31.0" prefWidth="279.0" promptText="SUBJECT ID">
+                     <font>
+                        <Font name="Cambria" size="12.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXComboBox fx:id="comboDepartment" maxWidth="300.0" minWidth="198.0" prefHeight="35.0" prefWidth="198.0" promptText="Department" GridPane.rowIndex="1" />
+                  <Label fx:id="lbldepid" prefHeight="27.0" prefWidth="109.0" GridPane.rowIndex="2" />
+                  <JFXComboBox fx:id="comboClass" prefHeight="49.0" prefWidth="278.0" promptText="COURSE" GridPane.rowIndex="3" />
+                  <Label fx:id="lblcourseid" prefHeight="26.0" prefWidth="86.0" GridPane.rowIndex="4" />
+                  <JFXComboBox fx:id="comboSemester" prefHeight="35.0" prefWidth="280.0" promptText="SEMESTER" GridPane.rowIndex="5" />
+                  <JFXComboBox fx:id="comboTeacher" prefHeight="31.0" prefWidth="278.0" promptText="SELECT TEACHER" GridPane.rowIndex="6" />
+                  <JFXTextField fx:id="txtsession" maxWidth="278.0" minWidth="278.0" prefHeight="43.0" prefWidth="278.0" promptText="SESSION" GridPane.rowIndex="7" />
+                  <HBox prefHeight="60.0" prefWidth="278.0" GridPane.rowIndex="8">
+                     <children>
+                        <JFXButton buttonType="RAISED" onAction="#saveCourseMapping" prefHeight="30.0" prefWidth="133.0" ripplerFill="#3f25d7" style="-fx-background-color: rgb(0, 170, 207);" text="SAVE" textFill="WHITE">
+                           <font>
+                              <Font name="Roboto Medium" size="12.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </JFXButton>
+                        <JFXButton buttonType="RAISED" onAction="#deleteCourseMapping" prefHeight="31.0" prefWidth="140.0" ripplerFill="#3d9a31" style="-fx-background-color: #26B99A;" text="DELETE" textFill="WHITE">
+                           <font>
+                              <Font name="Roboto Medium" size="15.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="408.0" layoutY="24.0" prefHeight="629.0" prefWidth="680.0" styleClass="card-white">
+         <children>
+            <AnchorPane layoutY="-3.0" prefHeight="67.0" prefWidth="680.0" style="-fx-background-color: rgb(0, 115, 183,0.6); -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5); -fx-background-radius: 5;">
+               <children>
+                  <Label layoutX="14.0" layoutY="25.0" prefHeight="28.0" prefWidth="115.0" text="Filter by :" textFill="WHITE">
+                     <font>
+                        <Font name="Roboto Black" size="19.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="txtSearch" layoutX="158.0" layoutY="30.0" promptText="enter course id" />
+                  <JFXButton fx:id="btnSearch" buttonType="RAISED" layoutX="315.0" layoutY="31.0" onAction="#searchCourseMapping" prefHeight="30.0" prefWidth="102.0" style="-fx-background-color: #0073B7;" text="SEARCH" textFill="#fffefe">
+                     <font>
+                        <Font name="Roboto Black" size="13.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="14.0" wrappingWidth="19.0" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="btnSearch1" buttonType="RAISED" layoutX="519.0" layoutY="31.0" onAction="#showCourseMapping" prefHeight="30.0" prefWidth="102.0" style="-fx-background-color: #0073B7;" text="REFRESH" textFill="#fffefe">
+                     <font>
+                        <Font name="Roboto Black" size="13.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="REFRESH" size="14.0" wrappingWidth="19.0" />
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <TableView fx:id="cmTable" layoutX="-2.0" layoutY="66.0" prefHeight="563.0" prefWidth="680.0">
+              <columns>
+                <TableColumn fx:id="cmcourseidCol" text="SUBJECT ID" />
+                  <TableColumn fx:id="cmcoursenameCol" prefWidth="133.0" text="SUBJECT NAME" />
+                  <TableColumn fx:id="cmclassCol" prefWidth="75.0" text="COURSE" />
+                  <TableColumn fx:id="cmsemesterCol" prefWidth="75.0" text="SEMESTER" />
+                  <TableColumn fx:id="cmdepartmentCol" prefWidth="137.0" text="DEPARTMENT" />
+                  <TableColumn fx:id="cmteachercol" prefWidth="107.0" text="TEACHER" />
+                  <TableColumn fx:id="cmsessioncol" prefWidth="72.0" text="SESSION" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="680.0" prefWidth="1124.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="modules.ResultPrintController">
+   <children>
+      <StackPane prefHeight="680.0" prefWidth="1124.0">
+         <children>
+            <AnchorPane fx:id="holderAnchor" prefHeight="680.0" prefWidth="1109.0">
+               <children>
+                  <AnchorPane layoutX="9.0" layoutY="41.0" prefHeight="71.0" prefWidth="1113.0" style="-fx-background-radius: 5; -fx-background-color: #ffff;">
+                     <children>
+                        <JFXButton fx:id="btnSearch" buttonType="RAISED" layoutX="461.0" layoutY="26.0" onAction="#showResult" prefHeight="30.0" prefWidth="177.0" style="-fx-background-color: #0073B7;" text="Search" textFill="#fffefe">
+                           <font>
+                              <Font name="Roboto Black" size="13.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="14.0" wrappingWidth="19.0" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton buttonType="RAISED" layoutX="687.0" layoutY="26.0" prefHeight="30.0" prefWidth="177.0" style="-fx-background-color: #0073B7;" text="Refresh" textFill="#fffefe">
+                           <font>
+                              <Font name="Roboto Black" size="13.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="REFRESH" size="14.0" wrappingWidth="19.0" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXTextField fx:id="txtsid" labelFloat="true" layoutX="213.0" layoutY="25.0" maxWidth="313.0" minWidth="206.0" prefHeight="31.0" prefWidth="206.0" promptText="ENTER STUDENT ID">
+                           <font>
+                              <Font name="Cambria Bold" size="12.0" />
+                           </font></JFXTextField>
+                        <JFXComboBox fx:id="comsemester" layoutX="32.0" layoutY="18.0" prefHeight="33.0" prefWidth="168.0" promptText="SELECT SEMESTER" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="20.0" layoutY="143.0" prefHeight="539.0" prefWidth="1095.0" style="-fx-background-color: #FFFF;">
+                     <children>
+                        <ImageView fx:id="imageview" fitHeight="177.0" fitWidth="168.0" layoutX="870.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true" />
+                        <GridPane layoutX="42.0" layoutY="44.0" prefHeight="132.0" prefWidth="799.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="STUDENT NAME">
+                                 <font>
+                                    <Font name="Cambria Bold" size="14.0" />
+                                 </font></Label>
+                              <Label text="FATHER NAME" GridPane.columnIndex="2">
+                                 <font>
+                                    <Font name="Cambria Bold" size="14.0" />
+                                 </font></Label>
+                              <Label text="DEPARTMENT" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Cambria Bold" size="14.0" />
+                                 </font></Label>
+                              <Label text="SESSION" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Cambria Bold" size="14.0" />
+                                 </font></Label>
+                              <Label text="ROLL NO" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Cambria Bold" size="14.0" />
+                                 </font></Label>
+                              <Label text="CLASS" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Cambria Bold" size="14.0" />
+                                 </font></Label>
+                              <Label GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Cambria Bold" size="14.0" />
+                                 </font></Label>
+                              <Label fx:id="lblrollno" prefHeight="30.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Cambria Bold" size="14.0" />
+                                 </font></Label>
+                              <Label fx:id="lblsname" prefHeight="30.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font name="Cambria Bold" size="14.0" />
+                                 </font></Label>
+                              <Label fx:id="lblsession" layoutX="217.0" layoutY="18.0" prefHeight="30.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Cambria Bold" size="14.0" />
+                                 </font></Label>
+                              <Label fx:id="lblfathername" layoutX="10.0" layoutY="18.0" prefHeight="30.0" prefWidth="200.0" GridPane.columnIndex="3">
+                                 <font>
+                                    <Font name="Cambria Bold" size="14.0" />
+                                 </font></Label>
+                              <Label fx:id="lbldepname" layoutX="10.0" layoutY="18.0" prefHeight="25.0" prefWidth="198.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Cambria Bold" size="14.0" />
+                                 </font></Label>
+                              <Label fx:id="lblclass" layoutX="217.0" layoutY="84.0" prefHeight="30.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Cambria Bold" size="14.0" />
+                                 </font></Label>
+                              <Label prefHeight="29.0" prefWidth="198.0" text="SEMESTER" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="Cambria Bold" size="14.0" />
+                                 </font></Label>
+                              <Label fx:id="lblsemester" prefHeight="29.0" prefWidth="198.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="Cambria Bold" size="14.0" />
+                                 </font></Label>
+                           </children>
+                        </GridPane>
+                        <GridPane layoutX="39.0" layoutY="167.0" prefHeight="315.0" prefWidth="1012.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label prefHeight="31.0" prefWidth="107.0" text="SUBJECT ID">
+                                 <font>
+                                    <Font name="Cambria Bold Italic" size="14.0" />
+                                 </font></Label>
+                              <Label layoutX="10.0" layoutY="27.0" text="MARKS" GridPane.columnIndex="3">
+                                 <font>
+                                    <Font name="Cambria Bold Italic" size="14.0" />
+                                 </font></Label>
+                              <Label layoutX="10.0" layoutY="27.0" text="CREDIT HOURS" GridPane.columnIndex="2">
+                                 <font>
+                                    <Font name="Cambria Bold Italic" size="14.0" />
+                                 </font></Label>
+                              <Label layoutX="10.0" layoutY="27.0" text="SUBJECT NAME" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font name="Cambria Bold Italic" size="14.0" />
+                                 </font></Label>
+                              <Label fx:id="lblsubject6" layoutX="10.0" layoutY="20.0" prefHeight="31.0" prefWidth="252.0" GridPane.rowIndex="6">
+                                 <font>
+                                    <Font name="Cambria Bold" size="13.0" />
+                                 </font></Label>
+                              <Label fx:id="lblsubject5" layoutX="10.0" layoutY="20.0" prefHeight="31.0" prefWidth="257.0" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font name="Cambria Bold" size="13.0" />
+                                 </font></Label>
+                              <Label fx:id="lblsubject4" layoutX="10.0" layoutY="20.0" prefHeight="31.0" prefWidth="248.0" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font name="Cambria Bold" size="13.0" />
+                                 </font></Label>
+                              <Label fx:id="lblsubject3" layoutX="10.0" layoutY="20.0" prefHeight="31.0" prefWidth="253.0" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="Cambria Bold" size="13.0" />
+                                 </font></Label>
+                              <Label fx:id="lblsubject2" layoutX="10.0" layoutY="20.0" prefHeight="31.0" prefWidth="247.0" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Cambria Bold" size="13.0" />
+                                 </font></Label>
+                              <Label fx:id="lblsubject1" layoutX="10.0" layoutY="20.0" prefHeight="31.0" prefWidth="253.0" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Cambria Bold" size="13.0" />
+                                 </font></Label>
+                              <Label fx:id="lblmarks2" layoutX="10.0" layoutY="20.0" prefHeight="30.0" prefWidth="250.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Cambria Bold" size="13.0" />
+                                 </font></Label>
+                              <Label fx:id="lblmarks1" layoutX="10.0" layoutY="20.0" prefHeight="30.0" prefWidth="250.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Cambria Bold" size="13.0" />
+                                 </font></Label>
+                              <Label fx:id="lblsubjectname1" prefHeight="32.0" prefWidth="255.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Cambria Bold" size="13.0" />
+                                 </font></Label>
+                              <Label fx:id="lblsubjectname2" prefHeight="33.0" prefWidth="257.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Cambria Bold" size="13.0" />
+                                 </font></Label>
+                              <Label fx:id="lblsubjectname3" prefHeight="35.0" prefWidth="257.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="Cambria Bold" size="13.0" />
+                                 </font></Label>
+                              <Label fx:id="lblsubjectname4" prefHeight="33.0" prefWidth="249.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font name="Cambria Bold" size="13.0" />
+                                 </font></Label>
+                              <Label fx:id="lblsubjectname5" prefHeight="35.0" prefWidth="258.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font name="Cambria Bold" size="13.0" />
+                                 </font></Label>
+                              <Label fx:id="lblcredithours1" prefHeight="30.0" prefWidth="250.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Cambria Bold" size="13.0" />
+                                 </font></Label>
+                              <Label fx:id="lblsubjectname6" prefHeight="38.0" prefWidth="257.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                 <font>
+                                    <Font name="Cambria Bold" size="13.0" />
+                                 </font></Label>
+                              <Label fx:id="lblcredithours2" prefHeight="30.0" prefWidth="250.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Cambria Bold" size="13.0" />
+                                 </font></Label>
+                              <Label fx:id="lblcredithours3" prefHeight="30.0" prefWidth="250.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="Cambria Bold" size="13.0" />
+                                 </font></Label>
+                              <Label fx:id="lblcredithours4" prefHeight="30.0" prefWidth="250.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font name="Cambria Bold" size="13.0" />
+                                 </font></Label>
+                              <Label fx:id="lblmarks6" prefHeight="30.0" prefWidth="250.0" GridPane.columnIndex="3" GridPane.rowIndex="6">
+                                 <font>
+                                    <Font name="Cambria Bold" size="13.0" />
+                                 </font></Label>
+                              <Label fx:id="lblcredithours5" prefHeight="30.0" prefWidth="250.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font name="Cambria Bold" size="13.0" />
+                                 </font></Label>
+                              <Label fx:id="lblmarks3" prefHeight="30.0" prefWidth="250.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="Cambria Bold" size="13.0" />
+                                 </font></Label>
+                              <Label fx:id="lblmarks4" prefHeight="30.0" prefWidth="250.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font name="Cambria Bold" size="13.0" />
+                                 </font></Label>
+                              <Label fx:id="lblmarks5" layoutX="788.0" layoutY="226.0" prefHeight="30.0" prefWidth="250.0" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font name="Cambria Bold" size="13.0" />
+                                 </font></Label>
+                              <Label fx:id="lblcredithours6" layoutX="788.0" layoutY="324.0" prefHeight="30.0" prefWidth="250.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                                 <font>
+                                    <Font name="Cambria Bold" size="13.0" />
+                                 </font></Label>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

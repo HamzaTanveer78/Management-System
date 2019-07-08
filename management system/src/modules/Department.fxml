@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<!-- <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?> -->
+
+<AnchorPane id="AnchorPane" fx:id="parentPane" prefHeight="670.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="modules.DepartmentController">
+   <children>
+      <AnchorPane layoutX="41.0" layoutY="29.0" prefHeight="226.0" prefWidth="332.0" style="-fx-background-color: #ffffff;" styleClass="card-white">
+         <children>
+            <Pane layoutX="-1.0" layoutY="-21.0" prefHeight="38.0" prefWidth="332.0" style="-fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5); -fx-background-radius: 4; -fx-background-color: rgb(20, 95, 183,0.6);">
+               <children>
+                  <Label layoutX="95.0" layoutY="7.0" prefHeight="35.0" prefWidth="129.0" text="DEPARTMENT" textFill="WHITE">
+                     <font>
+                        <Font name="Roboto Medium" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <JFXTextField fx:id="txtDepid" labelFloat="true" layoutX="24.0" layoutY="59.0" maxWidth="300.0" minWidth="160.0" prefHeight="31.0" prefWidth="255.0" promptText="DEPARTMENT ID" />
+            <JFXTextField fx:id="txtDepname" labelFloat="true" layoutX="24.0" layoutY="121.0" maxWidth="300.0" minWidth="165.0" prefHeight="31.0" prefWidth="300.0" promptText="DEPARTMENT NAME" />
+            <HBox layoutX="24.0" layoutY="173.0" prefHeight="35.0" prefWidth="285.0" spacing="6.0">
+               <children>
+                  <JFXButton fx:id="btnDepSave" buttonType="RAISED" onAction="#saveDepartment" prefHeight="28.0" prefWidth="98.0" ripplerFill="#3f25d7" style="-fx-background-color: rgb(0, 170, 207);" text="SAVE" textFill="WHITE">
+                     <font>
+                        <Font name="Cambria" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" onAction="#updateDepartment" prefHeight="28.0" prefWidth="111.0" ripplerFill="#3d9a31" style="-fx-background-color: #26B99A;" text="UPDATE" textFill="WHITE">
+                     <font>
+                        <Font name="Cambria" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" onAction="#deleteDepartment" prefHeight="28.0" prefWidth="101.0" ripplerFill="#f52020" style="-fx-background-color: #F39C12;" text="DELETE" textFill="WHITE">
+                     <font>
+                        <Font name="Cambria" size="12.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <JFXButton fx:id="btnSearchDep" buttonType="RAISED" layoutX="280.0" layoutY="64.0" onAction="#searchDepartmentName" prefHeight="25.0" prefWidth="29.0" style="-fx-background-color: #0073B7;" text=" " textFill="#fffefe">
+               <font>
+                  <Font name="Roboto Black" size="13.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="14.0" wrappingWidth="10.0" />
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="690.0" layoutY="10.0" prefHeight="669.0" prefWidth="396.0" styleClass="card-white">
+         <children>
+            <TableView fx:id="mappingTable" layoutY="42.0" prefHeight="602.0" prefWidth="396.0">
+              <columns>
+                <TableColumn fx:id="classCol" prefWidth="50.0" text="C.ID" />
+                  <TableColumn fx:id="classnameCol" prefWidth="120.0" text="CLASS NAME" />
+                  <TableColumn fx:id="classdepCol" prefWidth="154.0" text="DEPARTMENT" />
+                  <TableColumn fx:id="classSemCol" prefWidth="71.0" text="SEMESTERS" />
+              </columns>
+            </TableView>
+            <AnchorPane prefHeight="38.0" prefWidth="396.0" style="-fx-background-color: rgb(0, 115, 183,0.6); -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5); -fx-background-radius: 5;">
+               <children>
+                  <Label layoutX="122.0" layoutY="2.0" prefHeight="35.0" prefWidth="129.0" text="CLASS DETAILS" textFill="WHITE">
+                     <font>
+                        <Font name="Roboto Medium" size="14.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="41.0" layoutY="277.0" prefHeight="402.0" prefWidth="332.0" style="-fx-background-color: #ffffff;" styleClass="card-white">
+         <children>
+            <Pane layoutY="-14.0" prefHeight="38.0" prefWidth="332.0" style="-fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5); -fx-background-radius: 4; -fx-background-color: rgb(20, 95, 183,0.6);">
+               <children>
+                  <Label layoutX="95.0" layoutY="2.0" prefHeight="35.0" prefWidth="129.0" text="CLASS MAPPING" textFill="WHITE">
+                     <font>
+                        <Font name="Roboto Medium" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <JFXTextField fx:id="txtClassid" labelFloat="true" layoutX="39.0" layoutY="53.0" maxWidth="255.0" minWidth="240.0" prefHeight="38.0" prefWidth="220.0" promptText="CLASS ID" />
+            <HBox layoutX="14.0" layoutY="350.0" prefHeight="31.0" prefWidth="285.0" spacing="6.0">
+               <children>
+                  <JFXButton fx:id="btnClassSave" buttonType="RAISED" onAction="#saveClass" prefHeight="28.0" prefWidth="90.0" ripplerFill="#3f25d7" style="-fx-background-color: rgb(0, 170, 207);" text="SAVE" textFill="WHITE">
+                     <font>
+                        <Font name="Cambria" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" onAction="#updateClass" prefHeight="27.0" prefWidth="90.0" ripplerFill="#3d9a31" style="-fx-background-color: #26B99A;" text="UPDATE" textFill="WHITE">
+                     <font>
+                        <Font name="Cambria" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" onAction="#deleteClass" prefHeight="28.0" prefWidth="90.0" ripplerFill="#f52020" style="-fx-background-color: #F39C12;" text="DELETE" textFill="WHITE">
+                     <font>
+                        <Font name="Cambria" size="12.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <JFXTextField fx:id="txtClassname" labelFloat="true" layoutX="39.0" layoutY="109.0" maxWidth="255.0" minWidth="255.0" prefHeight="38.0" prefWidth="255.0" promptText="CLASS NAME" />
+            <JFXTextField fx:id="txtClassdepid" labelFloat="true" layoutX="41.0" layoutY="225.0" maxWidth="255.0" minWidth="255.0" prefHeight="38.0" prefWidth="255.0" promptText="DEPARTMENT ID" />
+            <JFXComboBox fx:id="depCombo" layoutX="41.0" layoutY="167.0" prefHeight="35.0" prefWidth="226.0" promptText="DEPARTMENT" />
+            <JFXTextField fx:id="txtSemesterno" labelFloat="true" layoutX="39.0" layoutY="284.0" maxWidth="255.0" minWidth="255.0" prefHeight="38.0" prefWidth="255.0" promptText="SEMESTER NO" />
+            <JFXButton buttonType="RAISED" layoutX="281.0" layoutY="63.0" onAction="#searchClass" prefHeight="25.0" prefWidth="29.0" style="-fx-background-color: #0073B7;" text=" " textFill="#fffefe">
+               <font>
+                  <Font name="Roboto Black" size="13.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="14.0" wrappingWidth="10.0" />
+               </graphic>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="276.0" layoutY="183.0" onAction="#fetchDepartment" prefHeight="25.0" prefWidth="29.0" style="-fx-background-color: #0073B7;" text=" " textFill="#fffefe">
+               <font>
+                  <Font name="Roboto Black" size="13.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="REFRESH" size="14.0" wrappingWidth="10.0" />
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="387.0" layoutY="12.0" prefHeight="669.0" prefWidth="300.0" styleClass="card-white">
+         <children>
+            <TableView fx:id="depTable" layoutY="39.0" prefHeight="608.0" prefWidth="299.0">
+              <columns>
+                <TableColumn fx:id="depidCol" prefWidth="74.0" text="D.ID" />
+                  <TableColumn fx:id="depnameCol" prefWidth="224.0" text="DEPARTMENT NAME" />
+              </columns>
+            </TableView>
+            <AnchorPane layoutY="-1.0" prefHeight="38.0" prefWidth="299.0" style="-fx-background-color: rgb(0, 115, 183,0.6); -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5); -fx-background-radius: 5;">
+               <children>
+                  <Label layoutX="57.0" layoutY="2.0" prefHeight="35.0" prefWidth="169.0" text="DEPARTMENT DETAILS" textFill="WHITE">
+                     <font>
+                        <Font name="Roboto Medium" size="14.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

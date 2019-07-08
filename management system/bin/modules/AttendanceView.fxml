@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="680.0" prefWidth="1124.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="modules.AttendanceViewController">
+   <children>
+      <StackPane prefHeight="680.0" prefWidth="1124.0">
+         <children>
+            <AnchorPane fx:id="holderAnchor" prefHeight="680.0" prefWidth="1109.0">
+               <children>
+                  <TableView fx:id="attendancetable" layoutX="9.0" layoutY="122.0" prefHeight="540.0" prefWidth="1113.0">
+                     <columns>
+                        <TableColumn fx:id="idcol" prefWidth="107.0" text="ID" />
+                        <TableColumn fx:id="namecol" prefWidth="118.0" text="NAME" />
+                        <TableColumn fx:id="colsubj1" prefWidth="91.0" text="SUBJECT1" />
+                        <TableColumn fx:id="colsubj2" prefWidth="89.0" text="SUBJECT2" />
+                        <TableColumn fx:id="colsubj3" minWidth="1.0" prefWidth="106.0" text="SUBJECT3" />
+                        <TableColumn fx:id="colsubj4" prefWidth="95.0" text="SUBJECT4" />
+                        <TableColumn fx:id="colsubj5" prefWidth="92.0" text="SUBJECT5" />
+                        <TableColumn fx:id="colsubj6" prefWidth="115.0" text="SUBJECT6" />
+                        <TableColumn fx:id="colterm" prefWidth="123.0" text="TERM" />
+                     </columns>
+                  </TableView>
+                  <AnchorPane layoutX="9.0" layoutY="3.0" prefHeight="119.0" prefWidth="1113.0" style="-fx-background-color: rgb(0, 115, 183,0.6); -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5); -fx-background-radius: 5;">
+                     <children>
+                        <JFXButton buttonType="RAISED" layoutX="923.0" layoutY="28.0" onAction="#showRecord" prefHeight="38.0" prefWidth="159.0" style="-fx-background-color: #0073B7;" text="Search" textFill="#fffefe">
+                           <font>
+                              <Font name="Roboto Black" size="13.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="14.0" wrappingWidth="19.0" />
+                           </graphic>
+                        </JFXButton>
+                        <Pane layoutX="357.0" layoutY="9.0" prefHeight="38.0" prefWidth="319.0">
+                           <children>
+                              <Label layoutX="-1.0" layoutY="-1.0" prefHeight="38.0" prefWidth="319.0" text="STUDENT ATTENDANCE" textFill="#f8f4f4">
+                                 <font>
+                                    <Font name="Cambria Bold Italic" size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+                  <HBox layoutX="70.0" layoutY="52.0" prefHeight="52.0" prefWidth="825.0">
+                     <children>
+                        <JFXComboBox fx:id="combodepartment" prefHeight="47.0" prefWidth="194.0" promptText="DEPARTMENT">
+                           <HBox.margin>
+                              <Insets right="15.0" />
+                           </HBox.margin>
+                        </JFXComboBox>
+                        <JFXComboBox fx:id="comboclass" prefHeight="46.0" prefWidth="153.0" promptText="CLASS">
+                           <HBox.margin>
+                              <Insets right="15.0" />
+                           </HBox.margin>
+                        </JFXComboBox>
+                        <JFXComboBox fx:id="combosemester" prefHeight="46.0" prefWidth="156.0" promptText="SEMESTER">
+                           <HBox.margin>
+                              <Insets right="15.0" />
+                           </HBox.margin>
+                        </JFXComboBox>
+                        <JFXComboBox fx:id="combosession" prefHeight="46.0" prefWidth="132.0" promptText="SESSION">
+                           <HBox.margin>
+                              <Insets right="15.0" />
+                           </HBox.margin></JFXComboBox>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="680.0" prefWidth="1124.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="modules.StudentProfileController">
+   <children>
+      <StackPane prefHeight="680.0" prefWidth="1124.0">
+         <children>
+            <AnchorPane fx:id="holderAnchor" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="studenttable" layoutX="9.0" layoutY="122.0" prefHeight="540.0" prefWidth="1113.0">
+                     <columns>
+                        <TableColumn fx:id="idcol" prefWidth="61.0" text="ID" />
+                        <TableColumn fx:id="namecol" prefWidth="84.0" text="NAME" />
+                        <TableColumn fx:id="emailcol" prefWidth="106.0" text="EMAIL" />
+                        <TableColumn fx:id="contactcol" prefWidth="86.0" text="CONTACT" />
+                        <TableColumn fx:id="cniccol" prefWidth="39.0" text="CNIC" />
+                        <TableColumn fx:id="gendercol" prefWidth="43.0" text="SEX" />
+                        <TableColumn fx:id="dobcol" prefWidth="68.0" text="DOB" />
+                        <TableColumn fx:id="fathernamecol" prefWidth="103.0" text="FATHER NAME" />
+                        <TableColumn fx:id="foccuptioncol" prefWidth="92.0" text="COOCUPTION" />
+                        <TableColumn fx:id="fcontactcol" prefWidth="69.0" text="CONTACT" />
+                        <TableColumn fx:id="regestrationcol" prefWidth="106.0" text="REGESTRATION DATE" />
+                        <TableColumn fx:id="departmentcol" prefWidth="90.0" text="DEPARTMENT" />
+                        <TableColumn fx:id="classcol" prefWidth="88.0" text="CLASS" />
+                        <TableColumn fx:id="sessioncol" prefWidth="77.0" text="SESSION" />
+                     </columns>
+                  </TableView>
+                  <AnchorPane layoutX="9.0" layoutY="29.0" prefHeight="93.0" prefWidth="1113.0" style="-fx-background-color: rgb(0, 115, 183,0.6); -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5); -fx-background-radius: 5;">
+                     <children>
+                        <Label layoutX="808.0" prefHeight="28.0" prefWidth="115.0" text="Filter by :" textFill="WHITE">
+                           <font>
+                              <Font name="Roboto Black" size="19.0" />
+                           </font>
+                        </Label>
+                        <JFXRadioButton layoutX="685.0" layoutY="51.0" prefHeight="28.0" prefWidth="54.0" selected="true" styleClass="custom-jfx-check-box" text="Id" textFill="#fffdfd">
+                           <font>
+                              <Font name="Roboto Black" size="12.0" />
+                           </font>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="filter" />
+                           </toggleGroup>
+                        </JFXRadioButton>
+                        <JFXTextField fx:id="searchID" focusColor="#fcfcfc" labelFloat="true" layoutX="736.0" layoutY="46.0" maxWidth="214.0" minWidth="214.0" prefHeight="31.0" prefWidth="214.0" promptText="ENTER STUDENT ID" unFocusColor="WHITE">
+                           <font>
+                              <Font name="Roboto Black" size="13.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXButton fx:id="btnSearch" buttonType="RAISED" layoutX="961.0" layoutY="42.0" onAction="#searchStudent" prefHeight="30.0" prefWidth="130.0" style="-fx-background-color: #0073B7;" text="Search" textFill="#fffefe">
+                           <font>
+                              <Font name="Roboto Black" size="13.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="14.0" wrappingWidth="19.0" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton buttonType="RAISED" layoutX="539.0" layoutY="30.0" onAction="#showStudentRecord" prefHeight="39.0" prefWidth="124.0" style="-fx-background-color: #0073B7;" text="SEARCH ALL" textFill="#fffefe">
+                           <font>
+                              <Font name="Roboto Black" size="13.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="REFRESH" size="14.0" wrappingWidth="19.0" />
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+                  <HBox layoutX="15.0" layoutY="49.0" prefHeight="52.0" prefWidth="516.0">
+                     <children>
+                        <JFXComboBox fx:id="combodepartment" prefHeight="47.0" prefWidth="194.0" promptText="DEPARTMENT">
+                           <HBox.margin>
+                              <Insets right="15.0" />
+                           </HBox.margin>
+                        </JFXComboBox>
+                        <JFXComboBox fx:id="comboclass" prefHeight="46.0" prefWidth="153.0" promptText="CLASS">
+                           <HBox.margin>
+                              <Insets right="15.0" />
+                           </HBox.margin>
+                        </JFXComboBox>
+                        <JFXComboBox fx:id="combosession" prefHeight="46.0" prefWidth="147.0" promptText="SESSION">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </JFXComboBox>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

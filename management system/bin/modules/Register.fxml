@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<!-- <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?> -->
+
+<AnchorPane id="AnchorPane" fx:id="parentPane" prefHeight="670.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="modules.StudentRegisterController">
+   <children>
+      <AnchorPane layoutX="41.0" layoutY="44.0" prefHeight="604.0" prefWidth="332.0" style="-fx-background-color: #ffff;" styleClass="card-white">
+         <children>
+            <JFXButton buttonType="RAISED" layoutX="264.0" layoutY="45.0" onAction="#searchStudent" prefHeight="25.0" prefWidth="29.0" style="-fx-background-color: #0073B7;" text=" " textAlignment="RIGHT" textFill="#fffefe">
+               <font>
+                  <Font name="Roboto Black" size="13.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="14.0" wrappingWidth="10.0" />
+               </graphic>
+            </JFXButton>
+            <GridPane layoutX="14.0" layoutY="59.0" prefHeight="514.0" prefWidth="299.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <JFXTextField fx:id="txtsid" focusColor="#2196f3" labelFloat="true" maxWidth="301.0" minWidth="85.0" prefHeight="34.0" prefWidth="85.0" promptText="Student ID">
+                     <font>
+                        <Font name="Roboto Medium" size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="txtFirstname" focusColor="#2196f3" labelFloat="true" maxWidth="295.0" minWidth="224.0" prefHeight="38.0" prefWidth="295.0" promptText="First Name" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Roboto Medium" size="14.0" />
+                     </font></JFXTextField>
+                  <JFXTextField fx:id="txtLastname" focusColor="#2196f3" labelFloat="true" maxWidth="289.0" minWidth="224.0" prefHeight="38.0" prefWidth="289.0" promptText="Last Name" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Roboto Medium" size="14.0" />
+                     </font></JFXTextField>
+                  <JFXTextField fx:id="txtCNIC" focusColor="#2196f3" labelFloat="true" maxWidth="284.0" minWidth="224.0" prefHeight="38.0" prefWidth="284.0" promptText="CNIC" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Roboto Medium" size="14.0" />
+                     </font></JFXTextField>
+                  <JFXTextField fx:id="txtEmail" focusColor="#2196f3" labelFloat="true" maxWidth="288.0" minWidth="224.0" prefHeight="38.0" prefWidth="288.0" promptText="Email" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Roboto Medium" size="14.0" />
+                     </font></JFXTextField>
+                  <JFXTextField fx:id="txtPhone" maxWidth="299.0" minWidth="299.0" prefHeight="38.0" prefWidth="299.0" promptText="Phone" GridPane.rowIndex="5" />
+                  <Group GridPane.rowIndex="6">
+                     <children>
+                        <JFXRadioButton fx:id="rdMale" layoutX="10.0" layoutY="14.0" text="Male" textFill="#4d4d4d">
+                           <font>
+                              <Font name="Roboto Medium" size="14.0" />
+                           </font>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="gender" />
+                           </toggleGroup>
+                        </JFXRadioButton>
+                        <JFXRadioButton fx:id="rdFemale" layoutX="191.0" layoutY="14.0" text="Female" textFill="#4d4d4d" toggleGroup="$gender">
+                           <font>
+                              <Font name="Roboto Medium" size="14.0" />
+                           </font>
+                        </JFXRadioButton>
+                     </children>
+                  </Group>
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="394.0" layoutY="44.0" prefHeight="604.0" prefWidth="332.0" style="-fx-background-color: #ffff;" styleClass="card-white">
+         <children>
+            <GridPane layoutX="17.0" layoutY="29.0" prefHeight="80.0" prefWidth="299.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="85.0" minHeight="10.0" prefHeight="73.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <JFXDatePicker fx:id="dob" prefHeight="54.0" prefWidth="299.0" promptText="Date of Birth" />
+               </children>
+            </GridPane>
+            <Separator layoutY="102.0" prefHeight="9.0" prefWidth="332.0" />
+            <GridPane layoutX="27.0" layoutY="140.0" prefHeight="212.0" prefWidth="299.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="85.0" minHeight="10.0" prefHeight="63.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="98.0" minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="85.0" minHeight="10.0" prefHeight="85.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <JFXTextField fx:id="txtFathername" labelFloat="true" maxWidth="299.0" minWidth="299.0" prefHeight="33.0" prefWidth="299.0" promptText="Father's Name" />
+                  <JFXTextField fx:id="txtFatherphone" labelFloat="true" maxWidth="299.0" minWidth="299.0" prefHeight="38.0" prefWidth="299.0" promptText="Father's Phone No" GridPane.rowIndex="1" />
+                  <JFXComboBox fx:id="comboOccuption" prefHeight="35.0" prefWidth="299.0" promptText="Occuption" GridPane.rowIndex="2" />
+               </children>
+            </GridPane>
+            <GridPane layoutX="37.0" layoutY="402.0" prefHeight="179.0" prefWidth="299.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="85.0" minHeight="10.0" prefHeight="73.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="85.0" minHeight="10.0" prefHeight="73.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <JFXTextField fx:id="txtAddress" labelFloat="true" promptText="HOme Address" />
+                  <JFXTextField fx:id="txtZipcode" labelFloat="true" maxWidth="299.0" minWidth="299.0" prefHeight="42.0" prefWidth="299.0" promptText="Zip Code" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+            <Separator layoutX="5.0" layoutY="350.0" prefHeight="9.0" prefWidth="332.0" />
+            <Label layoutX="18.0" layoutY="359.0" prefHeight="31.0" prefWidth="98.0" text="Address Details" />
+            <Label layoutX="34.0" layoutY="103.0" prefHeight="31.0" prefWidth="98.0" text="Family Details" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="744.0" layoutY="42.0" prefHeight="604.0" prefWidth="332.0" style="-fx-background-color: #ffff;" styleClass="card-white">
+         <children>
+            <Pane layoutX="1.0" layoutY="-1.0" prefHeight="51.0" prefWidth="325.0" style="-fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5); -fx-background-radius: 4; -fx-background-color: rgb(20, 95, 183,0.6);">
+               <children>
+                  <Label layoutX="38.0" layoutY="8.0" prefHeight="35.0" prefWidth="111.0" text="School Details" textFill="WHITE">
+                     <font>
+                        <Font name="Roboto Medium" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <JFXButton buttonType="RAISED" layoutX="266.0" layoutY="74.0" onAction="#fetchDepartment" prefHeight="25.0" prefWidth="29.0" style="-fx-background-color: #0073B7;" text=" " textFill="#fffefe">
+               <font>
+                  <Font name="Roboto Black" size="13.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="REFRESH" size="14.0" wrappingWidth="10.0" />
+               </graphic>
+            </JFXButton>
+            <GridPane fx:id="schooldetails" layoutX="17.0" layoutY="109.0" prefHeight="385.0" prefWidth="299.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="86.0" minHeight="10.0" prefHeight="48.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="86.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="126.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="126.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="122.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="99.0" minHeight="10.0" prefHeight="75.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="99.0" minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="101.0" minHeight="10.0" prefHeight="57.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <JFXComboBox fx:id="comboDepartment" prefHeight="35.0" prefWidth="281.0" promptText="Department" />
+                  <JFXComboBox fx:id="comboClass" prefHeight="35.0" prefWidth="281.0" promptText="Class" GridPane.rowIndex="2" />
+                  <JFXTextField fx:id="txtSession" maxWidth="299.0" minWidth="299.0" prefHeight="39.0" prefWidth="299.0" promptText="Session" GridPane.rowIndex="4" />
+                  <JFXDatePicker fx:id="regestrationdate" prefHeight="31.0" prefWidth="299.0" GridPane.rowIndex="5" />
+                  <Label fx:id="lbldepid" prefHeight="25.0" prefWidth="212.0" GridPane.rowIndex="1" />
+                  <Label fx:id="lblclassid" layoutX="10.0" layoutY="62.0" prefHeight="17.0" prefWidth="115.0" GridPane.rowIndex="3" />
+               </children>
+            </GridPane>
+            <HBox layoutX="24.0" layoutY="513.0" prefHeight="38.0" prefWidth="285.0" spacing="6.0">
+               <children>
+                  <JFXButton fx:id="btnSave" buttonType="RAISED" onAction="#saveStudent" prefHeight="35.0" prefWidth="90.0" ripplerFill="#3f25d7" style="-fx-background-color: rgb(0, 170, 207);" text="SAVE" textFill="WHITE">
+                     <font>
+                        <Font name="Roboto Medium" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" onAction="#updateStudent" prefHeight="35.0" prefWidth="90.0" ripplerFill="#3d9a31" style="-fx-background-color: #26B99A;" text="UPDATE" textFill="WHITE">
+                     <font>
+                        <Font name="Roboto Medium" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" onAction="#deleteStudent" prefHeight="35.0" prefWidth="90.0" ripplerFill="#f52020" style="-fx-background-color: #F39C12;" text="DELETE" textFill="WHITE">
+                     <font>
+                        <Font name="Roboto Medium" size="15.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <Pane layoutX="39.0" layoutY="28.0" prefHeight="46.0" prefWidth="332.0" style="-fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5); -fx-background-radius: 4; -fx-background-color: rgb(20, 95, 183,0.6);">
+         <children>
+            <Label layoutX="29.0" layoutY="8.0" prefHeight="35.0" prefWidth="129.0" text="Personal Details" textFill="WHITE">
+               <font>
+                  <Font name="Roboto Medium" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
